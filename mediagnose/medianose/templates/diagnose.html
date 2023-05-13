@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnose</title>
+</head>
+<body>
+{% include "navbar.html" %}
+{% load static %}
+
+     <!-- NEWS DETAIL -->
+     <section id="news-detail" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-8 col-sm-7">
+                         <!-- NEWS THUMB -->
+                         <div class="news-detail-thumb">
+                              <h3>Hey, You are probably affected by {{disease}} </h3>
+
+                              <blockquote>{{res.resw}}.</blockquote>
+                              <p>{{res.resc}}</p>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-5">
+                         <div class="news-sidebar">
+                              <div class="recent-post">
+                                   <h4>Related Posts</h4>
+                                   {%for i in res.resg %}
+                                        <div class="media">
+                                             <div class="media-body">
+                                                  <h4 class="media-heading"><a href={{i}}>{{i}}</a></h4>
+                                             </div>
+                                        </div>
+                                   {% endfor %}
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+
+
+
+
+{% include "footer.html" %}
+</body>
+</html>
